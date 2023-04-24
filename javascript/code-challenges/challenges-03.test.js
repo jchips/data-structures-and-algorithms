@@ -25,10 +25,7 @@ Write a function named typeNum that, given an array as input, uses filter to ret
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const typeNum = (arr) => {
-  // Solution code here...
-  return arr.filter(element => typeof element === 'number');
-};
+const typeNum = (arr) => arr.filter(element => typeof element === 'number');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -38,10 +35,7 @@ Write a function named containsAnd that, given an array of strings as input, use
 For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
-const containsAnd = (arr) => {
-  // Solution code here...
-  return arr.filter(string => string.includes('and'));
-};
+const containsAnd = (arr) => arr.filter(string => string.includes('and'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -51,10 +45,7 @@ Write a function named oddValues that, given an array of integers as input, uses
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const oddValues = (arr) => {
-  // Solution code here...
-  return arr.filter(num => num % 2 === 1);
-};
+const oddValues = (arr) => arr.filter(num => num % 2 === 1);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -64,10 +55,7 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
-const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
-  return arr.filter(num => !forbiddenValues.includes(num));
-};
+const notInFirstArray = (forbiddenValues, arr) => arr.filter(num => !forbiddenValues.includes(num));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -108,10 +96,7 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
-  return arr.filter(stat => stat.baseStat > minBaseStat);
-};
+const getBaseStatGreaterThan = (arr, minBaseStat) => arr.filter(stat => stat.baseStat > minBaseStat);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -121,10 +106,7 @@ Write a function named getStatName that is an extension of your getBaseStatGreat
 For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
 ------------------------------------------------------------------------------------------------ */
 
-const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
-  return arr.filter(stat => stat.baseStat > minBaseStat).map(stat => stat.stat.name);
-};
+const getStatName = (arr, minBaseStat) => arr.filter(stat => stat.baseStat > minBaseStat).map(stat => stat.stat.name);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -175,10 +157,7 @@ const characters = [
   },
 ];
 
-const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
-  return arr.filter(characters => !characters.children);
-};
+const getCharactersWithoutChildren = (arr) => arr.filter(characters => !characters.children);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -189,7 +168,6 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
   return typeNum(arr).map(num => {
     if(num % 2 === 0) {
       return 'even';
