@@ -245,13 +245,18 @@ You DO NOT need to use your solution to Challenge 12 in completing Challenge 13.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  arr.sort((a,b)=> {
-    if(a.start > b.start) {
+  let weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  arr.sort((a, b) => {
+    if (weekDays.indexOf(a.dayOfWeek) > weekDays.indexOf(b.dayOfWeek)) {
       return 1;
-    } else if (a.start < b.start) {
+    } else if (weekDays.indexOf(a.dayOfWeek) < weekDays.indexOf(b.dayOfWeek)){
       return -1;
     } else {
-      if(a.dayOfWeek === b.dayOfWeek) {
+      if(a.start > b.start) {
+        return 1;
+      } else if (a.start < b.start) {
+        return -1;
+      } else {
         let aMeetingLength = a.end - a.start;
         let bMeetingLength = b.end - b.start;
         if(aMeetingLength > bMeetingLength) {
@@ -259,8 +264,6 @@ const sortSchedule = (arr) => {
         } else {
           return -1;
         }
-      } else {
-        return -1;
       }
     }
   });
@@ -377,7 +380,7 @@ describe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should sort people with more strict ordering', () => {
     const family = [
       new Person('Casey', 'Codefellows', 55),
@@ -398,7 +401,7 @@ xdescribe('Testing challenge 11', () => {
   });
 });
 
-xdescribe('Testing challenge 12', () => {
+describe('Testing challenge 12', () => {
   test('It should sort meetings by the day on which they happen', () => {
     const sortedMeetings = sortMeetingsByDay(meetings);
     expect(sortedMeetings.slice(0,2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
