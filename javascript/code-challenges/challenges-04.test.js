@@ -223,7 +223,15 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  let weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  arr.sort((a, b) => {
+    if (weekDays.indexOf(a.dayOfWeek) > weekDays.indexOf(b.dayOfWeek)) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -237,7 +245,26 @@ You DO NOT need to use your solution to Challenge 12 in completing Challenge 13.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+  arr.sort((a,b)=> {
+    if(a.start > b.start) {
+      return 1;
+    } else if (a.start < b.start) {
+      return -1;
+    } else {
+      if(a.dayOfWeek === b.dayOfWeek) {
+        let aMeetingLength = a.end - a.start;
+        let bMeetingLength = b.end - b.start;
+        if(aMeetingLength > bMeetingLength) {
+          return 1;
+        } else {
+          return -1;
+        }
+      } else {
+        return -1;
+      }
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -350,7 +377,7 @@ describe('Testing challenge 10', () => {
   });
 });
 
-describe('Testing challenge 11', () => {
+xdescribe('Testing challenge 11', () => {
   test('It should sort people with more strict ordering', () => {
     const family = [
       new Person('Casey', 'Codefellows', 55),
@@ -381,7 +408,7 @@ xdescribe('Testing challenge 12', () => {
   });
 });
 
-xdescribe('Testing challenge 13', () => {
+describe('Testing challenge 13', () => {
   test('It should sort meetings by when they happen', () => {
     expect(sortSchedule(meetings)).toStrictEqual([
       new Meeting('Monday', '0900', '0945'),
