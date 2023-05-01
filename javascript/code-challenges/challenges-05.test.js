@@ -206,11 +206,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  return arr.reduce((acc, num) => {
-    acc.count = acc++;
-    acc.sum = acc.sum += num;
-    return acc.sum / acc.count;
-  }, {count: 0, sum: 0});
+  let count = 0;
+  let sum = 0;
+  arr.reduce((acc, num) => {
+    count++;
+    sum = acc + num;
+    return sum;
+  }, 0);
+  return sum / count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -231,7 +234,12 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, element) => {
+    if (isPrime(element)) {
+      acc++;
+    }
+    return acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -273,7 +281,10 @@ const snorlaxData = {
 };
 
 const extractStats = (snorlaxData) => {
-  // Solution code here...
+  return snorlaxData.stats.reduce((acc, snorlax) => {
+    acc[snorlax.stat.name] = snorlax.baseStat;
+    return acc;
+  }, {});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -287,7 +298,11 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  return arr.filter(character => character.name.includes('a'))
+    .reduce((acc, character) => {
+      if(character.children) character.children.map(child => acc.push(child));
+      return acc;
+    }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -350,25 +365,25 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an object that contains the names of each stat as individual keys and the respective baseStats as values to those keys.', () => {
     expect(extractStats(snorlaxData)).toStrictEqual({'speed': 30, 'special-defense': 110, 'special-attack': 65});
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return an array containing the names of the children', () => {
     expect(extractChildren(characters)).toStrictEqual([ 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras' ]);
     expect(extractChildren(characters).length).toStrictEqual(10);
