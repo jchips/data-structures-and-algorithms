@@ -22,11 +22,7 @@ For example:
 Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
-const getNames = (arr) => {
-  return arr.map(person => {
-    return person.name.split('').reverse().join('');
-  });
-};
+const getNames = (arr) => arr.map(person => person.name.split('').reverse().join(''));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
