@@ -109,16 +109,9 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  for(let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr[i].length; j++) {
-      console.log(arr[i][j]);
-      if(arr[i][j].includes('Brook')) {
-        // console.log(arr[i][j]);
-        arr[i].splice(arr[i].indexOf(arr[i][j]), 1);
-      }
-    }
-  }
-  return arr;
+  return arr.map(arrInLoop => {
+    return arrInLoop.filter(string => !string.includes('Brook'));
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -251,7 +244,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove Brook from all courses', () => {
     const roster = [
       ['Michelle', 'Allie', 'Brook TESTING'],
