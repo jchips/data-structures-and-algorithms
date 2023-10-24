@@ -22,5 +22,8 @@ To run your tests
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
-Table of Contents
+#### Table of Contents
+
 [Array Reverse](javascript/array-reverse/README.md)
+
+[Insert Shift Array](javascript/array-insert-shift/README.md)
