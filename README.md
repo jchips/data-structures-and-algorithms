@@ -29,3 +29,5 @@ To run your tests
 [Insert Shift Array](javascript/array-insert-shift/README.md)
 
 [Array Binary Search](javascript/array-binary-search/README.md)
+
+[Linked list](javascript/linked-list/README.md)
