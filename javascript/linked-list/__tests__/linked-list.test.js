@@ -1,13 +1,9 @@
 'use strict';
 
-// Require our linked list implementation
+// Linked list implementation
 const LinkedList = require('../index');
 
 describe('Linked List', () => {
-  it('works', () => {
-    expect(true).toBeTruthy();
-  });
-
   it('instantiate empty linked list', () => {
     const linked = new LinkedList();
 
