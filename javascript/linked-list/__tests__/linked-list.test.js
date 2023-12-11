@@ -59,4 +59,74 @@ describe('Linked List', () => {
 
     expect(linked.toString()).toEqual('{ 10 } -> { 5 } -> NULL');
   });
+
+  // CODE CHALLENGE 6 TESTS
+
+  it('add node to end of linked list', () => {
+    const linked = new LinkedList();
+    linked.insert(5);
+    linked.insert(10);
+    linked.append(4);
+
+    expect(linked.head.value).toEqual(10);
+    expect(linked.head.next.value).toEqual(5);
+    expect(linked.head.next.next.value).toEqual(4);
+  });
+
+  it('add multiple nodes to end of linked list', () => {
+    const linked = new LinkedList();
+    linked.insert(5);
+    linked.insert(10);
+    linked.append(4);
+    linked.append(3);
+
+    expect(linked.head.value).toEqual(10);
+    expect(linked.head.next.value).toEqual(5);
+    expect(linked.head.next.next.value).toEqual(4);
+    expect(linked.head.next.next.next.value).toEqual(3);
+  });
+
+  it('insert a node before a node located i the middle of a linked list', () => {
+    const linked = new LinkedList();
+    linked.insert(5);
+    linked.insert(10);
+    linked.insertBefore(5, 15);
+
+    expect(linked.head.value).toEqual(10);
+    expect(linked.head.next.value).toEqual(15);
+    expect(linked.head.next.next.value).toEqual(5);
+  });
+
+  it('insert a node before the first node of a linked list', () => {
+    const linked = new LinkedList();
+    linked.insert(5);
+    linked.insert(10);
+    linked.insertBefore(10, 15);
+
+    expect(linked.head.value).toEqual(15);
+    expect(linked.head.next.value).toEqual(10);
+    expect(linked.head.next.next.value).toEqual(5);
+  });
+
+  it('insert after a node in the middle of the linked list', () => {
+    const linked = new LinkedList();
+    linked.insert(5);
+    linked.insert(10);
+    linked.insertAfter(10, 15);
+
+    expect(linked.head.value).toEqual(10);
+    expect(linked.head.next.value).toEqual(15);
+    expect(linked.head.next.next.value).toEqual(5);
+  });
+
+  it('insert a node after the last node of the linked list', () => {
+    const linked = new LinkedList();
+    linked.insert(5);
+    linked.insert(10);
+    linked.insertAfter(5, 15);
+
+    expect(linked.head.value).toEqual(10);
+    expect(linked.head.next.value).toEqual(5);
+    expect(linked.head.next.next.value).toEqual(15);
+  });
 });
