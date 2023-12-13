@@ -30,6 +30,39 @@ class LinkedList {
     string += 'NULL';
     return string;
   }
+
+  append(addValue) {
+    let current = this.head;
+    while (current.next !== null) {
+      current = current.next;
+    }
+    current.next = new Node(addValue);
+  }
+
+  insertBefore(value, addValue) {
+    let current = this.head;
+    while(current) {
+      if (this.head.value === value) {
+        this.head = new Node(addValue, this.head);
+        break;
+      } else if(current.next.value === value) {
+        current.next = new Node(addValue, current.next);
+        break;
+      }
+      current = current.next;
+    }
+  }
+
+  insertAfter(value, addValue) {
+    let current = this.head;
+    while(current) {
+      if(current.value === value) {
+        current.next = new Node(addValue, current.next);
+        break;
+      }
+      current = current.next;
+    }
+  }
 }
 
 class Node {
