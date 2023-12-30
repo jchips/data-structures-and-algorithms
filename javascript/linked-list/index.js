@@ -63,6 +63,23 @@ class LinkedList {
       current = current.next;
     }
   }
+
+  kthFromEnd(k) {
+    let current = this.head;
+    let arrCount = 0;
+    let arr = [];
+    while(current) {
+      arr[arrCount] = current.value;
+      current = current.next;
+      arrCount++;
+    }
+    let fromEnd = arrCount - k;
+    if (fromEnd <= 0 || k < 0) {
+      return 'Exception';
+    }
+    let value = arr[fromEnd - 1];
+    return value;
+  }
 }
 
 class Node {

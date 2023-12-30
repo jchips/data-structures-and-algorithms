@@ -129,4 +129,49 @@ describe('Linked List', () => {
     expect(linked.head.next.value).toEqual(5);
     expect(linked.head.next.next.value).toEqual(15);
   });
+
+  // CODE CHALLENGE 7 TESTS
+
+  it('Where k is greater than the length of the linked list', () => {
+    const linked = new LinkedList();
+    linked.insert(5);
+    linked.insert(10);
+    linked.insert(15);
+
+    expect(linked.kthFromEnd(6)).toEqual('Exception');
+  });
+
+  it('Where k and the length of the list are the same', () => {
+    const linked = new LinkedList();
+    linked.insert(5);
+    linked.insert(10);
+    linked.insert(15);
+
+    expect(linked.kthFromEnd(3)).toEqual('Exception');
+  });
+
+  it('Where k is not a positive integer', () => {
+    const linked = new LinkedList();
+    linked.insert(5);
+    linked.insert(10);
+    linked.insert(15);
+
+    expect(linked.kthFromEnd(-3)).toEqual('Exception');
+  });
+
+  it('Where the linked list is of a size 1', () => {
+    const linked = new LinkedList();
+    linked.insert(5);
+
+    expect(linked.kthFromEnd(0)).toEqual(5);
+  });
+
+  it('“Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+    const linked = new LinkedList();
+    linked.insert(5);
+    linked.insert(10);
+    linked.insert(15);
+
+    expect(linked.kthFromEnd(2)).toEqual(15);
+  });
 });
