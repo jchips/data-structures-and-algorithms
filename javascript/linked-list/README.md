@@ -47,6 +47,16 @@ Write the following methods for the Linked List class:
       arguments: value, new value
       adds a new node with the given new value immediately after the first node that has the value specified
 
+## Code Challenge 7
+
+Write the following method for the Linked List class:
+
+- kth from end
+
+   argument: a number, k, as a parameter.
+      Return the node’s value that is k places from the tail of the linked list.
+      You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
 ## Whiteboard Process
 
 No whiteboard
@@ -61,6 +71,7 @@ I just did exactly what the instructions told me.
 - The Big-O for the append() method is O(n) because it runs n times.
 - The Big-O for the insertBefore method is O(n) because it runs n times.
 - The Big-O for the insertAfter() method is O(n) because it runs n times.
+- The Big-O for the kthFromEnd() method is O(n) because it runs n times.
 
 ## Solution
 
