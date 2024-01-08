@@ -41,11 +41,11 @@ class LinkedList {
 
   insertBefore(value, addValue) {
     let current = this.head;
-    while(current) {
+    while (current) {
       if (this.head.value === value) {
         this.head = new Node(addValue, this.head);
         break;
-      } else if(current.next.value === value) {
+      } else if (current.next.value === value) {
         current.next = new Node(addValue, current.next);
         break;
       }
@@ -55,8 +55,8 @@ class LinkedList {
 
   insertAfter(value, addValue) {
     let current = this.head;
-    while(current) {
-      if(current.value === value) {
+    while (current) {
+      if (current.value === value) {
         current.next = new Node(addValue, current.next);
         break;
       }
@@ -68,7 +68,7 @@ class LinkedList {
     let current = this.head;
     let arrCount = 0;
     let arr = [];
-    while(current) {
+    while (current) {
       arr[arrCount] = current.value;
       current = current.next;
       arrCount++;
@@ -83,10 +83,31 @@ class LinkedList {
 }
 
 class Node {
-  constructor(value, next=null) {
+  constructor(value, next = null) {
     this.value = value;
     this.next = next;
   }
 }
 
-module.exports = LinkedList;
+function zipLists(list1, list2) {
+  let current1 = list1.head;
+  let current2 = list2.head;
+  if (!current1) {
+    return list2;
+  }
+  while (current1 && current2) {
+    list1.insertAfter(current1.value, current2.value);
+    current1 = current1.next;
+    current2 = current2.next;
+    current1 = current1.next;
+  }
+  if (current2) {
+    while (current2) {
+      list1.append(current2.value);
+      current2 = current2.next;
+    }
+  }
+  return list1;
+}
+
+module.exports = { LinkedList, zipLists };

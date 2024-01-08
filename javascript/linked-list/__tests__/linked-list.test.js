@@ -1,7 +1,8 @@
 'use strict';
 
 // Linked list implementation
-const LinkedList = require('../index');
+const { LinkedList } = require('../index');
+const { zipLists }= require('../index');
 
 describe('Linked List', () => {
   it('instantiate empty linked list', () => {
@@ -173,5 +174,86 @@ describe('Linked List', () => {
     linked.insert(15);
 
     expect(linked.kthFromEnd(2)).toEqual(15);
+  });
+
+  // CODE CHALLENGE 8 TESTS
+
+  it('Zips with 2 linked lists of same length (amount of nodes)', () => {
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    list1.insert(2);
+    list1.insert(3);
+    list1.insert(1);
+    list2.insert(4);
+    list2.insert(9);
+    list2.insert(5);
+
+    expect(zipLists(list1, list2).toString()).toEqual('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL');
+  });
+
+  it('Zips with list1 being greater in nodes', () => {
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    list1.insert(2);
+    list1.insert(3);
+    list1.insert(1);
+    list2.insert(9);
+    list2.insert(5);
+
+    expect(zipLists(list1, list2).toString()).toEqual('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> NULL');
+  });
+
+  it('Zips with list2 being greater in nodes', () => {
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    list1.insert(3);
+    list1.insert(1);
+    list2.insert(4);
+    list2.insert(9);
+    list2.insert(5);
+
+    expect(zipLists(list1, list2).toString()).toEqual('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> NULL');
+  });
+
+  it('Zips with list1 only having 1 node', () => {
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    list1.insert(1);
+    list2.insert(4);
+    list2.insert(9);
+    list2.insert(5);
+
+    expect(zipLists(list1, list2).toString()).toEqual('{ 1 } -> { 5 } -> { 9 } -> { 4 } -> NULL');
+  });
+
+  it('Zips with list2 only having 1 node', () => {
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    list1.insert(2);
+    list1.insert(3);
+    list1.insert(1);
+    list2.insert(5);
+
+    expect(zipLists(list1, list2).toString()).toEqual('{ 1 } -> { 5 } -> { 3 } -> { 2 } -> NULL');
+  });
+
+  it('Zips with list1 having no nodes', () => {
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    list1.insert(2);
+    list1.insert(3);
+    list1.insert(1);
+
+    expect(zipLists(list1, list2).toString()).toEqual('{ 1 } -> { 3 } -> { 2 } -> NULL');
+  });
+
+  it('Zips with list2 having no nodes', () => {
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    list2.insert(4);
+    list2.insert(9);
+    list2.insert(5);
+
+    expect(zipLists(list1, list2).toString()).toEqual('{ 5 } -> { 9 } -> { 4 } -> NULL');
   });
 });
