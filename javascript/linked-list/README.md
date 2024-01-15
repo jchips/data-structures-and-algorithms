@@ -70,7 +70,7 @@ You have access to the Node class and all the properties on the Linked List clas
 
 ## Whiteboard Process
 
-No whiteboard
+![Whiteboard](code-challenge-8.jpeg)
 
 ## Approach & Efficiency
 
