@@ -31,3 +31,5 @@ To run your tests
 [Array Binary Search](javascript/array-binary-search/README.md)
 
 [Linked list](javascript/linked-list/README.md)
+
+[Stack and Queue](javascript/stack-and-queue/README.md)
