@@ -80,3 +80,5 @@ Run my code by making an instance of the Stack and/or Queue class I made. Then y
     stack.push(10);
     console.log('output:' stack.pop().value);
     // output: 10
+
+[Link to code](index.js)
