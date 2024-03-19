@@ -101,7 +101,21 @@ Implement the following methods:
   - Return: either a dog or a cat, based on preference.
   - If pref is not "dog" or "cat" then return null.
 
+## Code Challenge 13
+
+Write a function called validate brackets
+
+- Arguments: string
+- Return: boolean
+  - representing whether or not the brackets in the string are balanced
+- There are 3 types of brackets:
+  - Round Brackets: ()
+  - Square Brackets: []
+  - Curly Brackets: {}
+
 ### Whiteboard Process
+
+Challenge 11:
 
 ![Challenge 11](assets/code-challenge-11.jpeg)
 
@@ -112,6 +126,8 @@ Challenge 10: I read about stacks and queues and looked at diagrams of what they
 Challenge 11: I instantiated 2 stacks in the constructor of the psuedo queue. For enqueuing, I added to one of the stacks and for dequeuing I transferred all the nodes in 1 stack to the other, popped the top value, then put them all back into the original stack. The time complexity would be O(n) because I use a while loop to do this. The space complexity would be O(n) because the additional space (the stacks) grows linearly based on the size of the queue.
 
 Challenge 12: I instantiated 2 queues in the constructor of the animal shelter. One for dogs and one for cats. I added to the queues depending on the type of animal, and then dequeued only from the queue of the animal that was preferred. I believe the time complexity is O(1) and the space complexity is O(n).
+
+Challenge 13: I added the front brackets in the inputted string into a stack and then compared the rear brackets in the string to the values I popped out of the stack. The time complexity and space complexity are both O(n) because the function loops n times depending on how long the inputted string is and the stack used fills up with n items depending on how many front brackets there are in the inputted string.
 
 ### Solution
 
@@ -128,8 +144,12 @@ Challenge 11: Make instance of PseudoQueue class. Then use the `enqueue(value)` 
 
 Challenge 12: Make instance of AnimalShelter class. Make instance(s) of Animal class. Then use the `enqueue(animal)` and `dequeue(pref)` methods on the AnimalShelter to add or remove Animals.
 
+Challenge 13: Call the `validateBracket()` function with a string parameter and then `console.log()` the output.
+
 [Link to code for challenge 10](index.js)
 
 [Link to code for challenge 11](PseudoQueue.js)
 
 [Link to code for challenge 12](AnimalShelter.js)
+
+[Link to code for challenge 13](validateBrackets.js)
