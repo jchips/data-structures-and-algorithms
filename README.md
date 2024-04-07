@@ -33,3 +33,5 @@ To run your tests
 [Linked list](javascript/linked-list/README.md)
 
 [Stack and Queue](javascript/stack-and-queue/README.md)
+
+[Trees](javascript/trees/README.md)
