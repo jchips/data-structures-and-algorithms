@@ -60,6 +60,23 @@ class BinaryTree {
     traverse(this.root);
     return arr;
   }
+
+  findMaximumValue() {
+    let max = this.root.value;
+    const traverse = (node) => {
+      if (max < node.value) {
+        max = node.value;
+      }
+      if (node.left) {
+        traverse(node.left);
+      }
+      if (node.right) {
+        traverse(node.right);
+      }
+    };
+    traverse(this.root);
+    return max;
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
@@ -90,5 +107,15 @@ class BinarySearchTree extends BinaryTree {
     return treeValues.includes(value);
   }
 }
+
+const binaryTree = new BinaryTree(new Node(45));
+binaryTree.root.left = new Node(5);
+binaryTree.root.right = new Node(20);
+binaryTree.root.left.left = new Node(30);
+binaryTree.root.left.right = new Node(55);
+
+console.log(binaryTree);
+
+console.log(binaryTree.findMaximumValue());
 
 module.exports = { BinaryTree, BinarySearchTree, Node };
