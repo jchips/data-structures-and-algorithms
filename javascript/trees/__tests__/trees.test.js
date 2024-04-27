@@ -48,4 +48,7 @@ describe('trees', () => {
     expect(tree.inOrder()).toEqual([]);
     expect(tree.postOrder()).toEqual([]);
   });
+  test('findMaximumValue() gives expected result', () => {
+    expect(binaryTree.findMaximumValue()).toEqual(15);
+  });
 });

@@ -27,13 +27,24 @@ Binary Search Tree
       - Argument: value
       - Returns: boolean indicating whether or not the value is in the tree at least once.
 
-### Whiteboard Process
+## Code Challenge 16
+
+Write the following method for the Binary Tree class
+
+- find maximum value
+  - Arguments: none
+  - Returns: number
+  - Find the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+## Whiteboard Process
 
 No whiteboard
 
 ## Approach & Efficiency
 
 Challenge 15: I read about trees and watched the lecture. Then followed the challenge directions. The Big-O for all the methods are O(n) time and space.
+
+Challenge 16: I recorded every time the node value was greater than the max and then returned the max at the end. The Big-O for the findMaximumValue() method is O(n) time and O(1) space.
 
 ## Solution
 
@@ -48,3 +59,5 @@ Challenge 10: Run my code by making an instance of the BinaryTree or BinarySearc
     // output: [ 10, 5, 15 ]
 
 [Link to code for challenge 15](./index.js)
+
+[Link to code for challenge 16](index.js)
