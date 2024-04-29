@@ -1,6 +1,7 @@
 'use strict';
 
 const { BinaryTree, BinarySearchTree, Node } = require('../index');
+const breadthFirst = require('../breadthFirst');
 
 let binaryTree;
 let bst = new BinarySearchTree();
@@ -50,5 +51,23 @@ describe('trees', () => {
   });
   test('findMaximumValue() gives expected result', () => {
     expect(binaryTree.findMaximumValue()).toEqual(15);
+  });
+  test('breathFirst() returns array with expected values', () => {
+    const tree = new BinaryTree(new Node(2));
+    tree.root.left = new Node(7);
+    tree.root.right = new Node(5);
+    tree.root.left.left = new Node(2);
+    tree.root.left.right = new Node(6);
+    tree.root.left.right.left = new Node(5);
+    tree.root.left.right.right = new Node(11);
+    tree.root.right.right = new Node(9);
+    tree.root.right.right.left = new Node(4);
+
+    expect(breadthFirst(tree)).toEqual([2, 7, 5, 2, 6, 9, 5, 11, 4]);
+  });
+  test('breathFirst() returns empty array if given empty tree', () => {
+    const tree = new BinaryTree();
+
+    expect(breadthFirst(tree)).toEqual([]);
   });
 });
