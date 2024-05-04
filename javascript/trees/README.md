@@ -44,6 +44,19 @@ Write a function called breadth first
 - Return: list of all values in the tree, in the order they were encountered
 - NOTE: Traverse the input tree using a Breadth-first approach
 
+## Code Challenge 18
+
+Write a function called fizz buzz tree
+
+- Arguments: k-ary tree
+- Return: new k-ary tree
+- Determine whether or not the value of each node is divisible by 3, 5 or both. Create a new tree with the same structure as the original, but the values modified as follows:
+
+  - If the value is divisible by 3, replace the value with “Fizz”
+  - If the value is divisible by 5, replace the value with “Buzz”
+  - If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
+  - If the value is not divisible by 3 or 5, simply turn the number into a String.
+
 ## Whiteboard Process
 
 No whiteboard
@@ -56,9 +69,11 @@ Challenge 16: I recorded every time the node value was greater than the max and 
 
 Challenge 17: I created a queue and added values to the output array as I dequeued them from the queue. If the node that was dequeued had any children, they were all added to the queue. The Big-O for the breadthFirst() function is O(n) time and space.
 
+Challenge 18: I created a new K-ary tree and then made as it a copy of the given tree but with fizzbuzz values instead. The Big-O for the fizzBuzzTree() function is O(n) time and space. n is the amount of nodes in the given tree. It uses additional space by creating a new tree. I made one for binary trees as well in the `index.js` file.
+
 ## Solution
 
-Challenge 15: Run my code by making an instance of the BinaryTree or BinarySearchTree class I made. Add nodes to the BinaryTree by making instances of the Node class. Then you can use the methods I made for the classes and console.log the outputs if the method returns anything. Example:
+Challenge 15: Run code by making an instance of the `BinaryTree` or `BinarySearchTree` class. Add nodes to the BinaryTree by making instances of the `Node` class. Then use the methods for the classes and `console.log()` the outputs to see the results if the method returns anything. Example:
 
     const BinaryTree = require('./index');
     const binaryTree = new BinaryTree(new Node(5));
@@ -68,10 +83,14 @@ Challenge 15: Run my code by making an instance of the BinaryTree or BinarySearc
     console.log('output:', inOrder);
     // output: [ 10, 5, 15 ]
 
-Challenge 17: Import/require the breadthFirst() function then use a tree as a parameter. The function will return an array with all the node values in the tree in breadth first order. If the given tree has no nodes/values, the array will be empty.
+Challenge 17: Import/require the `breadthFirst()` function then use a tree as a parameter. The function will return an array with all the node values in the tree in breadth first order. If the given tree has no nodes/values, the array will be empty.
+
+Challenge 18: Run code by making an instance of the `KAryTree` class. Add nodes to the class by making instances of the `Node` class. Print the output of the `fizzBuzzTree()` method with the `KAryTree` instance as a parameter using a `console.log()`to see the results.
 
 [Link to code for challenge 15](./index.js)
 
 [Link to code for challenge 16](index.js)
 
 [Link to code for challenge 17](./breadthFirst.js)
+
+[Link to code for challenge 18](./KAryTree.js);
