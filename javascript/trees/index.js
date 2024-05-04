@@ -108,14 +108,35 @@ class BinarySearchTree extends BinaryTree {
   }
 }
 
-const binaryTree = new BinaryTree(new Node(45));
-binaryTree.root.left = new Node(5);
-binaryTree.root.right = new Node(20);
-binaryTree.root.left.left = new Node(30);
-binaryTree.root.left.right = new Node(55);
+function fizzBuzzTree(tree) {
+  if (!tree.root) return tree;
+  let fizzBuzzTree = new BinaryTree(new Node(tree.root.value));
+  let fizzBuzzTreeNode = fizzBuzzTree.root;
+  const traverse = (node) => {
+    if (node.value % 15 === 0) {
+      fizzBuzzTreeNode.value = 'FizzBuzz';
+    } else if (node.value % 3 === 0) {
+      fizzBuzzTreeNode.value = 'Fizz';
+    } else if (node.value % 5 === 0) {
+      fizzBuzzTreeNode.value = 'Buzz';
+    } else {
+      fizzBuzzTreeNode.value = node.value.toString();
+    }
 
-console.log(binaryTree);
+    if (node.left) {
+      fizzBuzzTreeNode.left = new Node(node.left.value);
+      fizzBuzzTreeNode = fizzBuzzTreeNode.left;
+      traverse(node.left);
+    }
 
-console.log(binaryTree.findMaximumValue());
+    if (node.right) {
+      fizzBuzzTreeNode.right = new Node(node.right.value);
+      fizzBuzzTreeNode = fizzBuzzTreeNode.right;
+      traverse(node.right);
+    }
+  };
+  traverse(tree.root);
+  return fizzBuzzTree;
+}
 
-module.exports = { BinaryTree, BinarySearchTree, Node };
+module.exports = { BinaryTree, BinarySearchTree, Node, fizzBuzzTree };

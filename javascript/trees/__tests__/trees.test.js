@@ -1,6 +1,6 @@
 'use strict';
 
-const { BinaryTree, BinarySearchTree, Node } = require('../index');
+const { BinaryTree, BinarySearchTree, Node, fizzBuzzTree } = require('../index');
 const breadthFirst = require('../breadthFirst');
 
 let binaryTree;
@@ -69,5 +69,16 @@ describe('trees', () => {
     const tree = new BinaryTree();
 
     expect(breadthFirst(tree)).toEqual([]);
+  });
+  test('fizzBuzzTree() returns expected results', () => {
+    binaryTree.root.left.left = new Node(27);
+    binaryTree.root.right.left = new Node(8);
+
+    expect(fizzBuzzTree(binaryTree).preOrder()).toEqual(['Buzz', 'Buzz', 'Fizz', 'FizzBuzz', '8']);
+    expect(binaryTree.preOrder()).toEqual([5, 10, 27, 15, 8]);
+  });
+  test('fizzBuzzTree() returns unchanged tree if empty tree is given', () => {
+    const tree = new BinaryTree();
+    expect(fizzBuzzTree(tree));
   });
 });
