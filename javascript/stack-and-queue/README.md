@@ -121,17 +121,17 @@ Challenge 11:
 
 ### Approach & Efficiency
 
-Challenge 10: I read about stacks and queues and looked at diagrams of what they visually looked like. I kept FILO and LIFO (stacks), and FIFO and LILO (queues) in mind. Then I wrote tests. The Big O for all the methods are O(1) for space and time because they all take a constant amount of time and space.
+Challenge 10: The Big O for all the methods are O(1) for space and time because they all take a constant amount of time and space.
 
-Challenge 11: I instantiated 2 stacks in the constructor of the psuedo queue. For enqueuing, I added to one of the stacks and for dequeuing I transferred all the nodes in 1 stack to the other, popped the top value, then put them all back into the original stack. The time complexity would be O(n) because I use a while loop to do this. The space complexity would be O(n) because the additional space (the stacks) grows linearly based on the size of the queue.
+Challenge 11: Instantiates 2 stacks in the constructor of the psuedo queue. For enqueuing, add to one of the stacks and for dequeuing, transfer all the nodes in 1 stack to the other, pop the top value, then put them all back into the original stack. The time complexity is O(n). The space complexity is O(n) because the additional space (the stacks) grows linearly based on the size of the queue.
 
-Challenge 12: I instantiated 2 queues in the constructor of the animal shelter. One for dogs and one for cats. I added to the queues depending on the type of animal, and then dequeued only from the queue of the animal that was preferred. I believe the time complexity is O(1) and the space complexity is O(n).
+Challenge 12: Instantiates 2 queues in the constructor of the animal shelter. One for dogs and one for cats. Adds to the queues depending on the type of animal, and then dequeues only from the queue of the animal that was given. Time complexity is O(1) and the space complexity is O(n).
 
-Challenge 13: I added the front brackets in the inputted string into a stack and then compared the rear brackets in the string to the values I popped out of the stack. The time complexity and space complexity are both O(n) because the function loops n times depending on how long the inputted string is and the stack used fills up with n items depending on how many front brackets there are in the inputted string.
+Challenge 13: Adds the front brackets in the inputted string into a stack and then compares the rear brackets in the string to the values popped out of the stack. The time complexity and space complexity are both O(n) because the function loops n times depending on how long the inputted string is and the stack used fills up with n items depending on how many front brackets there are in the inputted string.
 
 ### Solution
 
-Challenge 10: Run my code by making an instance of the Stack and/or Queue class I made. Then you can use the methods I made for the class and console.log the outputs if the method returns anything. Example:
+Challenge 10: Make an instance of the Stack and/or Queue class. Then use the methods made for the class and `console.log()` the outputs if the method returns anything. Example:
 
     const Stack = require('./index');
     const stack = new Stack();
