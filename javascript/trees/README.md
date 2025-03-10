@@ -63,13 +63,15 @@ No whiteboard
 
 ## Approach & Efficiency
 
-Challenge 15: I read about trees and watched the lecture. Then followed the challenge directions. The Big-O for all the methods are O(n) time and space.
+Challenge 15: Big-O for all the methods are O(n) time and space.
 
-Challenge 16: I recorded every time the node value was greater than the max and then returned the max at the end. The Big-O for the findMaximumValue() method is O(n) time and O(1) space.
+Challenge 16: Records every time the node value is greater than the max and then returns the max at the end.
+Big-O for the `findMaximumValue()` method is O(n) time and O(1) space.
 
-Challenge 17: I created a queue and added values to the output array as I dequeued them from the queue. If the node that was dequeued had any children, they were all added to the queue. The Big-O for the breadthFirst() function is O(n) time and space.
+Challenge 17: Created queue and add values to the output array as they are dequeued. If the node that was dequeued had any children, they are all added to the queue.
+Big-O for the `breadthFirst()` function is O(n) time and space.
 
-Challenge 18: I created a new K-ary tree and then made as it a copy of the given tree but with fizzbuzz values instead. The Big-O for the fizzBuzzTree() function is O(n) time and space. n is the amount of nodes in the given tree. It uses additional space by creating a new tree. I made one for binary trees as well in the `index.js` file.
+Challenge 18: The Big-O for the fizzBuzzTree() function is O(n) time and space. n is the amount of nodes in the given tree. It uses additional space by creating a new tree. There is also one for binary trees as well in the `index.js` file.
 
 ## Solution
 

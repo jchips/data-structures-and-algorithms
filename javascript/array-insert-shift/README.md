@@ -8,8 +8,12 @@ Write a function called insertShiftArray which takes in an array and a value to 
 
 ## Approach & Efficiency
 
-I thought about making a new array and putting values into it, but I wanted to try and find a solution where I didn't have to make a new array, so I looped through the given array starting from the back and stopping halfway and just shifted the values over and inserted the given value in the middle. That seemed more efficient then making a new array. I haven't learned Big O yet.
+To approve efficiency, this solution does not create a new array. It loops through the given array starting from the end and stopping halfway, shifts the values over, and inserts the given value (in the middle of the array).
 
 ## Solution
 
-My code can be run by copying the code into a code editor with a console. It will also need an array and a value (of any kind) to take in as a parameter and then a line of code consoling the result from the function.
+Paste code into editor with console.
+
+Needs an array and a value (of any type) as parameters.
+
+Log the result.

@@ -74,28 +74,24 @@ You have access to the Node class and all the properties on the Linked List clas
 
 ## Approach & Efficiency
 
-I just did exactly what the instructions told me.
-
-My approach for the zipLists() function was to make a visualization first, come up with tests, and then write out the code. Then I wrote the tests.
-
-- I think the Big-O for the insert() method is O(1) because it takes the same amount of time to run for any input.
-- The Big-O for the includes() method is also O(1) I think because of the same reason.
-- The Big-O for the toString() method is O(n) because it runs n times.
-- The Big-O for the append() method is O(n) because it runs n times.
-- The Big-O for the insertBefore method is O(n) because it runs n times.
-- The Big-O for the insertAfter() method is O(n) because it runs n times.
-- The Big-O for the kthFromEnd() method is O(n) because it runs n times.
-- The Big-O for the zipLists() function is O(n) because it runs n times depending on the size of the greatest linked list.
+- Big-O for the insert() method is O(1) because it takes the same amount of time to run for any input.
+- Big-O for the includes() method is also O(1) I think because of the same reason.
+- Big-O for the toString() method is O(n) because it runs n times.
+- Big-O for the append() method is O(n) because it runs n times.
+- Big-O for the insertBefore method is O(n) because it runs n times.
+- Big-O for the insertAfter() method is O(n) because it runs n times.
+- Big-O for the kthFromEnd() method is O(n) because it runs n times.
+- Big-O for the zipLists() function is O(n) because it runs n times depending on the size of the greatest linked list.
 
 ## Solution
 
-Run my code by making an instance of the LinkedList class I made. Then you can use the methods I made for the class and console.log the outputs if the method returns anything. Example:
+- Make an instance of the LinkedList class.
+- Use the methods for the class.
+- Log output if the method return value.
 
-```javascript
-const LinkedList = require('./index');
-const linked = new LinkedList();
-linked.insert(5);
-linked.insert(10);
-console.log(linked.toString());
-/// console: { 10 } -> { 5 } -> NULL
-```
+      const LinkedList = require('./index');
+      const linked = new LinkedList();
+      linked.insert(5);
+      linked.insert(10);
+      console.log(linked.toString());
+      /// console: { 10 } -> { 5 } -> NULL

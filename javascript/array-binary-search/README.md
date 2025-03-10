@@ -9,8 +9,12 @@ NOTE: The search algorithm used in your function should be a binary search.
 
 ## Approach & Efficiency
 
-I made a binary search algorithm with a while loop and variables to narrow down the index of search key in the given sorted array. I have not learned Big O yet.
+Binary search algorithm with a while loop and variables to narrow down the index of search key in the given sorted array.
 
 ## Solution
 
-My code can be run by copying the code into a Javascript code editor with a console. It will also need an sorted array and a number value to take in as parameters and then a line of code consoling the result from the function.
+Paste code into editor with console.
+
+Needs a sorted array and a number value as parameters.
+
+Log the result.
