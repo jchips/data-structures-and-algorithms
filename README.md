@@ -24,9 +24,11 @@ To run your tests
 
 #### Table of Contents
 
+##### JavaScript
+
 [Array Reverse](javascript/array-reverse/README.md)
 
-[Insert Shift Array](javascript/array-insert-shift/README.md)
+[Array Insert Shift](javascript/array-insert-shift/README.md)
 
 [Array Binary Search](javascript/array-binary-search/README.md)
 
@@ -35,3 +37,11 @@ To run your tests
 [Stack and Queue](javascript/stack-and-queue/README.md)
 
 [Trees](javascript/trees/README.md)
+
+##### Python
+
+[Array Reverse](python/docs/array_reverse/README.md)
+
+[Array Insert Shift](python/docs/array_insert_shift/README.md)
+
+[Array Binary Search](python/docs/array_binary_search/README.md)
