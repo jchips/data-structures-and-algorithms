@@ -8,10 +8,10 @@ Write a function called `insert_shift_list` which takes in ~~an array~~ a list
 
 ## Approach & Efficiency
 
-Loop halfway through the given list
-Shift all the array items one to the right starting from the end of the list
-Add the given value to the list once the loop stops
-The time complexity is O(n) and the list is modified in place for efficiency
+- Loop halfway through the given list
+- Shift all the array items one to the right starting from the end of the list
+- Add the given value to the list once the loop stops
+- The time complexity is O(n) and the list is modified in place for efficiency
 
 ## Solution
 
