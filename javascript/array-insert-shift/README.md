@@ -17,3 +17,16 @@ Paste code into editor with console.
 Needs an array and a value (of any type) as parameters.
 
 Log the result.
+
+```javascript
+function insertShiftArray(arr, value) {
+  let end = (arr.length - 1) / 2;
+  let start = arr.length - 1;
+  while (start != Math.floor(end)) {
+    arr[start + 1] = arr[start];
+    start--;
+  }
+  arr[start + 1] = value;
+  return arr;
+}
+```
