@@ -9,7 +9,7 @@ NOTE: The search algorithm used in your function should be a binary search.
 
 ## Approach & Efficiency
 
-Binary search algorithm with a while loop and variables to narrow down the index of search key in the given sorted array.
+Binary search algorithm with a while loop and variables to narrow down the index of search key in the given sorted array. Time complexity is O(log n).
 
 ## Solution
 
@@ -18,3 +18,21 @@ Paste code into editor with console.
 Needs a sorted array and a number value as parameters.
 
 Log the result.
+
+```javascript
+function BinarySearch(sortedArr, searchKey) {
+  let start = 0;
+  let end = sortedArr.length - 1;
+  while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
+    if (searchKey < sortedArr[mid]) {
+      end = mid - 1;
+    } else if (searchKey > sortedArr[mid]) {
+      start = mid + 1;
+    } else {
+      return mid;
+    }
+  }
+  return -1;
+}
+```

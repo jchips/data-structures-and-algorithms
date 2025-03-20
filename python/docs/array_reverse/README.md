@@ -1,6 +1,6 @@
 # Array Reverse
 
-Write a function called ~~reverseArray~~ listArray which takes an ~~array~~ list as an argument. Without utilizing any of the built-in methods available to your language, return ~~an array~~ a list with elements in reversed order.
+Write a function called ~~reverseArray~~ reverse_list which takes an ~~array~~ list as an argument. Without utilizing any of the built-in methods available to your language, return ~~an array~~ a list with elements in reversed order.
 
 ## Whiteboard process
 
