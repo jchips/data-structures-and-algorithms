@@ -32,7 +32,7 @@ To run your tests
 
 [Array Binary Search](javascript/array-binary-search/README.md)
 
-[Linked list](javascript/linked-list/README.md)
+[Linked list](javascript/linked-list/index.js)
 
 [Stack and Queue](javascript/stack-and-queue/README.md)
 
@@ -45,3 +45,5 @@ To run your tests
 [Array Insert Shift](python/docs/array_insert_shift/README.md)
 
 [Array Binary Search](python/docs/array_binary_search/README.md)
+
+[Linked list](python/data_structures/linked_list.py)
