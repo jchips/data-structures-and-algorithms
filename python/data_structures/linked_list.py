@@ -64,6 +64,13 @@ class LinkedList:
             string += 'NULL'
         return string
 
+    def append(self, value):
+        current = self.head
+        while current.next:
+            current = current.next
+        else:
+            new_node = Node(value)
+            current.next = new_node
 
-class TargetError:
+class TargetError(Exception):
     pass
