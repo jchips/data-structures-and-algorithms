@@ -60,6 +60,7 @@ class LinkedList:
     return string
 
   def append(self, value):
+    """Appends new Node to the back of the list."""
     current = self.head
     while current.next:
       current = current.next
