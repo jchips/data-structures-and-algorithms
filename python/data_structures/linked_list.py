@@ -34,11 +34,10 @@ class LinkedList:
     self.head = Node(value, self.head)
 
   def includes(self, value):
-    """
-    Indicates whether value exists as a Node value somewhere within the list.
-    Arguments:
-      value (any): Values to check if exists.
-    Returns: (Boolean): Whether value exists or not.
+    """Indicates whether value exists as a Node value somewhere within the list.
+
+    :param Any value: Value to check if exists.
+    :return Boolean: Whether value exists or not.
     """
     current = self.head
     while current:
@@ -95,6 +94,23 @@ class LinkedList:
       current = current.next
     else:
       raise TargetError
+
+  def kth_from_end(self, k):
+    """Returns the value at the kth index from the end of the LinkedList."""
+    if k < 0:
+      raise TargetError
+    a_list = []
+    count = 0
+    current = self.head
+    while current:
+      count += 1
+      a_list += [current.value]
+      current = current.next
+    if k >= count:
+        raise TargetError
+    if k == 0:
+        return a_list[count - 1]
+    return a_list[-k - 1]
 
 class TargetError(Exception):
   pass
