@@ -1,9 +1,12 @@
 from data_structures.node import Node
+from data_structures.invalid_operation_error import InvalidOperationError
 
 
 class Stack:
     """
-    Put docstring here
+    Stack implementation.
+    Attributes:
+        top (Node): The top node in the stack.
     """
 
     def __init__(self, top=None):
@@ -25,21 +28,19 @@ class Stack:
 
     def pop(self):
         if self.top is None:
-            raise EmptyStackError
+            raise InvalidOperationError(
+                "Method not allowed on empty collection")
         top_value = self.top.value
         self.top = self.top.next_node
         return top_value
 
     def peek(self):
         if self.top is None:
-            raise EmptyStackError
+            raise InvalidOperationError(
+                "Method not allowed on empty collection")
         return self.top.value
 
     def is_empty(self):
         if self.top is None:
             return True
         return False
-
-
-class EmptyStackError(Exception):
-    pass
