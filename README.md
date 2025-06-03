@@ -47,3 +47,7 @@ To run your tests
 [Array Binary Search](python/docs/array_binary_search/README.md)
 
 [Linked list](python/data_structures/linked_list.py)
+
+[Stack](python/data_structures/stack.py)
+
+[Queue](python/data_structures/queue.py)
